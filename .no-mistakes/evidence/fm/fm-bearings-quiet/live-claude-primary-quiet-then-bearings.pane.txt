@@ -1,0 +1,80 @@
+
+
+❯ /quiet
+
+  Ran 1 shell command
+
+⏺ Skill(afk)
+  ⎿  Successfully loaded skill
+
+  Ran 3 shell commands
+
+⏺ Skill(bootstrap-diagnostics)
+  ⎿  Successfully loaded skill
+
+  Searched for 1 pattern
+
+⏺ Captain, the session is up and I'm switching on quiet mode now, starting with checking how
+  the launcher handles it.
+
+  Searched for 1 pattern, ran 5 shell commands
+
+⏺ Captain, quiet mode is prepared; now starting the background monitor that handles routine
+  notifications for you.
+
+  Listed 1 directory, ran 2 shell commands
+
+⏺ Captain, quiet mode is on. I'll handle routine updates in the background and only bring you
+  decisions, failures, needed logins or credentials, and work that's ready for your review.
+  Chatting with me won't turn it off; say /quiet off when you want an update after every event
+  again. Your approval rules haven't changed: anything that needs your word still waits for
+  it.
+
+  This home is empty: no projects, queued work, workers or saved preferences. GitHub sign-in
+  is working.
+
+  Before I can start any work, I need your OK to install two missing tools:
+
+  - tasks-axi tracks queued work. Work can't be started without it. Install: npm install -g
+    tasks-axi
+  - quota-axi reads your current usage limits so I can pick which setup a worker runs on.
+    Install: npm install -g quota-axi
+
+  lavish-axi is also older than the version I need, so visual review pages are off for now.
+  I'll give you decisions and reports as plain text until you approve the upgrade: npm install
+  -g lavish-axi && lavish-axi setup hooks.
+
+  Say the word and I'll install whichever of these you approve.
+
+✻ Churned for 1m 20s · done 8:04 AM · 1 shell still running
+
+❯ /bearings
+
+  Searched for 2 patterns, ran 4 shell commands
+
+⏺ Captain, the fleet snapshot is in and it's empty; I'm just checking one oddity in it before
+  I write it up.
+
+  Searched for 3 patterns, ran 2 shell commands
+
+⏺ Captain's Call
+  - No decisions are recorded, Captain. I can't confirm nothing needs you, though: this home
+    has no work list yet, so no contributions could be checked (0 of 0).
+
+  Recently Landed
+  - No recent completions are in the current baseline.
+
+  Underway
+  - Nothing is underway.
+
+  Charted Next
+  - Nothing is queued.
+
+  Once you approve the tool installs from my last message, I can create the work list.
+
+✻ Sautéed for 43s · done 8:05 AM · 1 shell still running
+
+──────────────────────────────────────────────────────────────────────────────────────────────
+❯
+──────────────────────────────────────────────────────────────────────────────────────────────
+  ⏵⏵ auto mode on · 1 shell · ← for agents · ↓ to manage

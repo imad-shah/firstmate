@@ -1,0 +1,6 @@
+state/.afk:
+quiet
+1790424243
+record present: yes
+catch-up gate: absent
+daemon pid alive: yes

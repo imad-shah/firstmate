@@ -1,0 +1,6 @@
+== new regression test (test_quiet_mode_is_present_for_the_guard_and_bearings) against head bin/
+ok - quiet mode is present for the guard and Bearings while away mode keeps refusing
+exit=0
+== new regression test (test_quiet_mode_is_present_for_the_guard_and_bearings) against base bin/
+not ok - guard refused quiet mode without-record: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+exit=1

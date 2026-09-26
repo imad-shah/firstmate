@@ -1,0 +1,60 @@
+# Lab Claude primary (session 513452b1): the /quiet entry and /bearings snapshot tool calls, with their results
+
+## tool_use toolu_01X1goTgQN1AHqSXf1bNcC7Z
+$ export FM_AFK_MODE=quiet; bin/fm-afk-launch.sh enter 2>&1; echo "enter rc=$?"; bin/fm-afk-launch.sh start-native 2>&1; echo "start-native rc=$?"; head -n1 "$FM_HOME/state/.afk" 2>&1
+## result
+Away posture recorded at 2026-09-26T12:04:03Z: hold-for-return only. No phone channel is configured; anything that needs you waits for your return. No away instructions were recorded; the away session acts on standing authority only, and anything that needs you waits for your return. Destructive, irreversible, and security-sensitive actions are never pre-authorizable, whatever the words say. Expected return: not given. Spend cap: 4 concurrent workers.
+Away posture (recorded):
+  entered: 2026-09-26T12:04:03Z
+  expected return: not given
+  spend cap: 4 concurrent workers
+  reach: hold-for-return only. No phone channel is configured; anything that needs you waits for your return.
+  your words: (none)
+enter rc=0
+start-native rc=0
+quiet
+
+## tool_use toolu_0194U4UuLbyVWNbCToLjHvyq
+$ snapshot=$(bin/fm-bearings-snapshot.sh --json 2>"/private/tmp/claude-501/-Users-imad--no-mistakes-worktrees-71100e57fbb6-01M3ERWRJF4JJZG1DFM46EHR3M/513452b1-0a0c-47d6-bdfa-021975e77c02/scratchpad/bearings.err"); echo "rc=$?"; printf '%s
+' "$snapshot" | head -c 6000; echo; echo ---stderr---; cat "/private/tmp/claude-501/-Users-imad--no-mistakes-worktrees-71100e57fbb6-01M3ERWRJF4JJZG1DFM46EHR3M/513452b1-0a0c-47d6-bdfa-021975e77c02/scratchpad/bearings.err"
+## result
+rc=0
+{
+  "schema": "fm-bearings.v1",
+  "home": "/fm-lab.trHjmp",
+  "generated": "2026-09-26T12:04:50Z",
+  "prs": "not_requested (run: /bearings include PRs)",
+  "contributions": {
+    "scope": "owned contributions per home",
+    "known": 0,
+    "checked": 0,
+    "counts": {
+      "captain": 0,
+      "fleet": 0,
+      "maintainer": 0,
+      "nobody": 0
+    },
+    "complete": false,
+    "proven_clear": false,
+    "unmeasured_homes": 0,
+    "unreadable_records": 1,
+    "unmeasured": 0,
+    "stale_verdicts": 0,
+    "missing_verdicts": 0,
+    "captain_omitted": 0,
+    "captain": []
+  },
+  "in_flight": [],
+  "secondmates": [],
+  "secondmate_reconcile": [],
+  "decisions_open": [],
+  "landed": [],
+  "gates": [],
+  "reports": [],
+  "recorded_prs": [],
+  "omitted": [
+    {
+      "surface": "backlog item bodies",
+      "reveal": "--fields bodies"
+    },
+    {

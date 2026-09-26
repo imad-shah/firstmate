@@ -1,0 +1,11 @@
+== S2: guard in quiet mode is read-only (full lab-home listing with size+mtime before/after)
+  state/.afk: quiet; guard exit: 0
+  lab home unchanged by guard (9 entries compared)
+
+== S8: return catch-up handling unchanged (seeded durable catch-up gate after /quiet off)
+  [HEAD, no flag] exit 0; (return-catchup) rows: [{"id":"(return-catchup)","title":"away-return catch-up is still open","blocked_by":"-","reason":"away-return catch-up","owner":"(main)","filed":null}]
+  [BASE, no flag] exit 0; (return-catchup) rows: [{"id":"(return-catchup)","title":"away-return catch-up is still open","blocked_by":"-","reason":"away-return catch-up","owner":"(main)","filed":null}]
+  guard exit HEAD no flag: 4
+  guard exit BASE no flag: 4
+  guard exit HEAD quiet flag + catch-up: 4
+  [HEAD, quiet flag + catch-up] exit 0; (return-catchup) rows: [{"id":"(return-catchup)","title":"away-return catch-up is still open","blocked_by":"-","reason":"away-return catch-up","owner":"(main)","filed":null}]

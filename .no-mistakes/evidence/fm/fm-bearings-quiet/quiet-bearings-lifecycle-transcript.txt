@@ -1,0 +1,135 @@
+== S1: /quiet entered through the real lifecycle (enter + start-native, FM_AFK_MODE=quiet)
+  enter: Away posture recorded at 2026-09-26T11:56:26Z: hold-for-return only. No phone channel is configured; anything that needs you waits for your return. Your away instructions are recorded verbatim; the away session will carry them out where it can, and anything it is unsure of, or that needs you, waits for your return. Destructive, irreversible, and security-sensitive actions are never pre-authorizable, whatever the words say. Expected return: not given. Spend cap: 4 concurrent workers.
+  enter: Away posture (recorded):
+  enter:   entered: 2026-09-26T11:56:26Z
+  enter:   expected return: not given
+  enter:   spend cap: 4 concurrent workers
+  enter:   reach: hold-for-return only. No phone channel is configured; anything that needs you waits for your return.
+  enter:   your words (verbatim):
+  enter:     quiet please, I am staying here
+  state/.afk first line: quiet | record present: yes
+  [HEAD f7fb3db] fm-bearings-snapshot.sh --json -> exit 0
+    stdout: {"schema":"fm-bearings.v1","return_catchup":null,"fm_home":"/fm-lab.CkIjYz"}
+  [BASE d1a332cd] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  state/.afk first line: quiet | record present: yes
+
+== S2: guard stays read-only in quiet mode
+  guard exit: 0
+  files created/modified under the lab home by guard: .
+  state/.afk first line: quiet | record present: yes
+
+== S3: ordinary Bearings run does not end quiet mode (flag/record untouched)
+  [HEAD again] fm-bearings-snapshot.sh --json -> exit 0
+    stdout: {"schema":"fm-bearings.v1","return_catchup":null,"fm_home":"/fm-lab.CkIjYz"}
+  state/.afk first line: quiet | record present: yes
+
+== S4: /quiet off runs the unchanged return, which ends quiet mode
+  fm-afk-return.sh exit: 0
+    fm-afk-launch: away-posture record archived at /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-lab.CkIjYz/state/afk-contracts/1790423786.afk-contract
+    fm-afk-launch: away mode stopped; no daemon terminal was running, .afk cleared, and the posture record archived
+    === Return brief (away 2026-09-26T11:56:26Z -> 2026-09-26T11:56:30Z, 4s) ===
+    Supervisor health:
+      - GAP: the away daemon was not running at return (the away flag stood with no live daemon)
+      - GAP: the watcher beat was 999999s old at return (grace 300s)
+    Your instructions:
+      your words at entry:
+        quiet please, I am staying here
+      the away session took no action under them.
+    Waiting on you:
+      (nothing)
+  state/.afk first line: <absent> | record present: no
+  catch-up file: absent
+  [HEAD after /quiet off] fm-bearings-snapshot.sh --json -> exit 0
+    stdout: {"schema":"fm-bearings.v1","return_catchup":null,"fm_home":"/fm-lab.CkIjYz"}
+
+== S5: /afk (away) entered through the real lifecycle keeps refusing
+  enter: Away posture recorded at 2026-09-26T11:56:30Z: hold-for-return only. No phone channel is configured; anything that needs you waits for your return. Your away instructions are recorded verbatim; the away session will carry them out where it can, and anything it is unsure of, or that needs you, waits for your return. Destructive, irreversible, and security-sensitive actions are never pre-authorizable, whatever the words say. Expected return: not given. Spend cap: 4 concurrent workers.
+  enter: Away posture (recorded):
+  enter:   entered: 2026-09-26T11:56:30Z
+  enter:   expected return: not given
+  enter:   spend cap: 4 concurrent workers
+  enter:   reach: hold-for-return only. No phone channel is configured; anything that needs you waits for your return.
+  enter:   your words (verbatim):
+  enter:     back in an hour
+  state/.afk first line: away | record present: yes
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  [BASE d1a332cd] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+
+== S6: adversarial flag contents with the away-posture record present (all must read as away)
+  -- first line quiet\ 
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  -- first line QUIET
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  -- first line Quiet
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  -- first line \ quiet
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  -- first line $'quiet\t'
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  -- first line 1790423790
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  -- first line ''
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  -- first line away
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+  -- first line quietly
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+
+== S7: record present but no flag (quiet mode cannot be proven) keeps refusing
+  state/.afk first line: <absent> | record present: yes
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+== S7b: flag says quiet, no record
+  state/.afk first line: quiet | record present: no
+  [HEAD] fm-bearings-snapshot.sh --json -> exit 0
+    stdout: {"schema":"fm-bearings.v1","return_catchup":null,"fm_home":"/fm-lab.CkIjYz"}
+  [BASE d1a332cd] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+
+== S8: return from away, then a pending return catch-up keeps its own handling
+  fm-afk-return.sh exit: 0
+  state/.afk first line: <absent> | record present: no
+  seeded state/.afk-return-catchup (phase blocked)
+    guard stderr: fm-afk-return: return catch-up is pending with no open blocker; clear the retention reason below, then run bin/fm-afk-return.sh check
+    guard stderr: catch-up retained: the durable gate recorded no retention reason
+  guard exit (HEAD): 4
+  [HEAD catch-up, no flag] fm-bearings-snapshot.sh --json -> exit 0
+    stdout: {"schema":"fm-bearings.v1","return_catchup":null,"fm_home":"/fm-lab.CkIjYz"}
+  [BASE catch-up, no flag] fm-bearings-snapshot.sh --json -> exit 0
+    stdout: {"schema":"fm-bearings.v1","return_catchup":null,"fm_home":"/fm-lab.CkIjYz"}
+  plus state/.afk=quiet
+  guard exit (HEAD, quiet + catch-up): 4
+  [HEAD catch-up + quiet] fm-bearings-snapshot.sh --json -> exit 0
+    stdout: {"schema":"fm-bearings.v1","return_catchup":null,"fm_home":"/fm-lab.CkIjYz"}
+  plus state/.afk=away
+  [HEAD catch-up + away] fm-bearings-snapshot.sh --json -> exit 3
+    stderr: fm-afk-return: away mode is still active; run bin/fm-afk-return.sh before ordinary captain work
+    stdout: <empty - no snapshot>
+
+lab removed on exit: /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-lab.CkIjYz

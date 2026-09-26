@@ -1,0 +1,5 @@
+after /quiet off:
+state/.afk: absent
+record present: no
+archived: 1790424243.afk-contract
+daemon pid alive: no
