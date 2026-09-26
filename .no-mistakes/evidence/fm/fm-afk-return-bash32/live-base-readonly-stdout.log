@@ -1,0 +1,79 @@
+== [base d1a332c] shell: GNU bash, version 3.2.57(1)-release (arm64-apple-darwin24); script shebang: #!/usr/bin/env bash
+== [base d1a332c] away mode on (legacy flag) and a captain inbox note queued while away
+inbox note rc=0
+queued wake rows: 
+== [base d1a332c] begin with UNWRITABLE stdout (ro)
+begin rc=1 (documented: 3 = catch-up remains pending)
+-- begin stderr:
+   fm-afk-launch: away mode stopped; no daemon terminal was running, .afk cleared, and the posture record archived
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 456: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 459: printf: write error: Bad file descriptor
+   awk: i/o error occurred while closing /dev/stdout
+    input record number 4, file /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-lab.wQQfTu/state/.afk-return-evidence.9Y7dRH
+    source line number 1
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 463: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 481: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 485: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 502: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 524: printf: write error: Bad file descriptor
+   sed: stdout: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 530: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 547: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 552: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 561: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 568: printf: write error: Bad file descriptor
+   /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T//fm-base.9zFaFb/bin/fm-afk-return.sh: line 571: 0
+   === Return brief ===
+   Supervisor health:
+   Your instructions:
+     (no away-posture record for this window; legacy away flag only)
+   Waiting on you:
+     held listing unavailable: === Return brief ===
+     escalated by the away session:
+   Tried and failed, or could not be fixed:
+     (nothing)
+   Landed, cleanup due:
+     (nothing)
+   Handled while away:: syntax error: operand expected (error token is "= Return brief ===
+   Supervisor health:
+   Your instructions:
+     (no away-posture record for this window; legacy away flag only)
+   Waiting on you:
+     held listing unavailable: === Return brief ===
+     escalated by the away session:
+   Tried and failed, or could not be fixed:
+     (nothing)
+   Landed, cleanup due:
+     (nothing)
+   Handled while away:")
+-- catch-up gate present: yes
+-- gate lifecycle evidence:
+-- stray staged files in state: 3
+== [base d1a332c] check with writable stdout (the retry)
+check rc=0
+-- check stdout:
+   === Return brief ===
+   Supervisor health:
+     - GAP: watcher downtime was detected during the away window (recovery marker present)
+     - GAP: the watcher beat was 999999s old at return (grace 300s)
+   Your instructions:
+     (no away-posture record for this window; legacy away flag only)
+   Waiting on you:
+     (nothing)
+   Tried and failed, or could not be fixed:
+     (nothing)
+   Landed, cleanup due:
+     (nothing)
+   Handled while away:
+     0 outcome(s) handled by the away session (0 routine, 0 escalated above)
+     (no routine outcomes recorded in the store for this window)
+   Cost: 0 supervision outcome(s) recorded (0 routine, 0 captain); 0 task(s) live at return.
+   catch-up health: GAP: watcher downtime was detected during the away window (recovery marker present)
+   catch-up health: GAP: the watcher beat was 999999s old at return (grace 300s)
+   catch-up wake: 1790424824 1 check inbox:1790424824-5alLvD check: captain inbox note 1790424824-5alLvD - check the release notes before merging
+   fm-afk-return: catch-up clear; ordinary captain work may proceed
+-- check stderr:
+   WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 17270.1790424824.VnFXaW
+-- catch-up gate present after check: no
+-- stray staged files in state: 3
+== [base d1a332c] lab removed: yes

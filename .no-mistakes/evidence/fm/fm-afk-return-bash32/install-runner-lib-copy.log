@@ -1,0 +1,10 @@
+== base install_runner (no lib copy)
+runner has fm-supervision-engine-lib.sh: no
+begin rc=0
+stderr lines naming the lib:
+   <runner>/case/bin/fm-afk-return.sh: line 443: /var/folders/bj/8l71ym7d6_gbxgq23pj27vcr0000gn/T/fm-runner.bcN1As/case/bin/fm-supervision-engine-lib.sh: No such file or directory
+== target install_runner (copies the lib)
+runner has fm-supervision-engine-lib.sh: yes
+begin rc=0
+stderr lines naming the lib:
+   (none)

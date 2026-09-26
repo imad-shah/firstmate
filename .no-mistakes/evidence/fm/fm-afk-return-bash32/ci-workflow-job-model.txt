@@ -1,0 +1,14 @@
+job=macos-stock-bash name="Stock macOS Bash snapshot compatibility" runs-on="macos-latest"
+step="Run snapshot consumers with stock Bash" shell="/bin/bash {0}"
+step invokes (lines mentioning /bin/bash):
+  /bin/bash --version | head -1
+  /bin/bash -n "$f" || { echo "::error::stock macOS Bash 3.2 failed to parse $f"; parse_fail=1; }
+  snapshot_output=$(/bin/bash tests/fm-fleet-snapshot-view.test.sh)
+  bearings_output=$(/bin/bash tests/fm-bearings-snapshot.test.sh)
+  # the empty-lock register regression under real /bin/bash 3.2.
+  /bin/bash tests/fm-public-followup.test.sh)
+  /bin/bash tests/fm-watch-triage.test.sh)
+  FM_TEST_BASH=/bin/bash \
+  /bin/bash tests/fm-backend.test.sh)
+  # read-only stdout, runs whole under real /bin/bash 3.2.
+  afk_return_output=$(/bin/bash tests/fm-afk-return.test.sh)
